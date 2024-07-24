@@ -41,7 +41,7 @@ This is an E-Commerce API built with Flask, SQLAlchemy, and Marshmallow. The app
 
 2. **Create a virtual environment**:
     ```bash
-    python -m venv myvenv
+    python3 -m venv myvenv
     source myvenv/bin/activate
     ```
 3. **Install required packages:**
@@ -57,7 +57,7 @@ This is an E-Commerce API built with Flask, SQLAlchemy, and Marshmallow. The app
 
 5. **Initialize the database:**
    ```bash
-   python app.py
+   python3 app.py
    ```
 
 ## API Endpoints
