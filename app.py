@@ -36,6 +36,7 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, nullable=False)
     customer_id = db.Column(db.Integer, db.ForeignKey('Customers.id'))
+    products = db.relationship("Product",secondary=order_product, backref=db.backref('orders'))
 
 #CustomerAccount Table
 class CustomerAccount(db.Model):
@@ -238,6 +239,7 @@ def place_order():
             new_order.products.append(product)
     db.session.add(new_order)
     db.session.commit()
+    return order_schema.jsonify(new_order), 200
 
 #updates order details
 @app.route("/orders/<int:id>", methods=["PUT"])
